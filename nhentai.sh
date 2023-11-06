@@ -19,7 +19,8 @@ ext="png"
 else
 ext="jpg"
 fi
-wget -P "./.temp/" --header="$header_1" --header="$header_2" --header="$header_3" "$image_domain/$i.$ext"
+wget -q -P "./.temp/" --header="$header_1" --header="$header_2" --header="$header_3" "$image_domain/$i.$ext"
+echo "Downloaded Page $i"
 done
 zip "$id.cbz" ./.temp/* && rm -rf ./.temp/*
 echo "Title is $(echo "$html" | grep -o '<title>.*' | sed 's/<title>//g')"
