@@ -2,10 +2,15 @@
 Its a bash script under 30 lines of code and no bullshit or bloat that download comic from "nhentai.to" and converts it into cbz format .
 
 # Example
-https://github.com/rustyinfinity/nhentai-downloader/assets/115462641/efbfa5e3-34d1-42d7-a09d-c60c2bd7b4ed
+
+
+https://github.com/rustyinfinity/nhentai-downloader/assets/115462641/e93789df-d95a-47af-9c51-e9013d00aee6
+
+
 
 # Output
-<img width="1218" alt="Screenshot 2023-11-07 at 4 33 51 AM" src="https://github.com/rustyinfinity/nhentai-downloader/assets/115462641/aafa8eab-cc55-47bf-87ce-d8029bbb07fc">
+<img width="1218" alt="Screenshot 2023-11-07 at 4 33 51 AM" src="https://github.com/rustyinfinity/nhentai-downloader/assets/115462641/166db4f6-9c65-4f98-95bc-f3c8ff720fd1">
+
 
 ## Installation
 
