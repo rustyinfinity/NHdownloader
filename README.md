@@ -1,5 +1,6 @@
 # Nhentai Downloader Bash
 Its a bash script under 30 lines of code and no bullshit or bloat that download comic from "nhentai.to" and converts it into cbz format .
+No cookie or cloudflare id needed ! Just paste link or id .
 
 # Example
 
