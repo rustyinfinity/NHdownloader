@@ -1,5 +1,5 @@
 # Hentai Downloader Bash
-Its a bash script to download comic/hentai manga from  and converts it into cbz format.
+Its a bash script to download comic/hentai manga from supported websites and converts it into cbz format.
 No bullshit or bloat just a simple bash script !
 
 # Supported Websites !
