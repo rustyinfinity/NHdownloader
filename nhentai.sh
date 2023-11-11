@@ -2,7 +2,7 @@
 
 ############### PREQUISTE ###############
 
-CONFIG_PATH="../main.config"
+CONFIG_PATH="./main.config"
 source $CONFIG_PATH
 
 if [ -z $DOWNLOAD_DIR ]
@@ -177,7 +177,7 @@ e-hentai(){
 }
 
 3Hentai(){
-   id=$(echo "$input" | grep -Eo 'd/[0-9]*' | grep -Eo '[0-9]*')
+   id=$(echo "$id" | head -n 2)
    url="https://3hentai.net/d/$id"
    html=$(curl -s $url)
    sub_page_links=$(echo "$html" | grep -Eo 'https://3hentai.net/d/[0-9]*/[0-9]*')
