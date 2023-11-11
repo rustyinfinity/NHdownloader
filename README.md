@@ -61,8 +61,10 @@ Rest all don't need anything and will download just fine !
 ## Contributing
 
 ✅ This is my first release of this code I will be obviously updating it and fixing it and adding nhentai (.com and .net) in future and bulk downloading !
+
 ✅ This is my second release of this code Fixed all above problems and also added more websites !
-   Bulk Downloading  and adding omegascans will be my next priority for the next release !
+
+Bulk Downloading  and adding omegascans will be my next priority for the next release !
 
 And If got any Ideas or Issues feel free to Pull a request !
 I have not done alot of testing so there will be issues which I don't know pls report them if you find any  Thanks !
