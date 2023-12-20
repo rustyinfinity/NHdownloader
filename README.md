@@ -1,23 +1,22 @@
-# Hentai Downloader Bash
+# NHDownloader Bash
 Its a bash script to download comic/hentai manga from supported websites and converts it into cbz format.
 No bullshit or bloat just a simple bash script !
 
 # Supported Websites !
 Nhentai.to , Nhentai.net , Hentaifox.com ,  E-hentai.org , 3hentai.net , Pururin.to ,  Asmhentai.com , Hentai2read.com
 
-# Example
+#
 
 
 
-https://github.com/rustyinfinity/nhentai-downloader/assets/115462641/cb67e6ce-cad4-494b-8119-9d779cb31caf
-
+<img width="789" alt="Screenshot 2023-12-21 at 4 27 17 AM" src="https://github.com/rustyinfinity/nhentai-downloader/assets/115462641/02e6845c-f0c4-4b49-93e0-120e825a229a">
 
 
 
 
 # Output
+<img width="1435" alt="Screenshot 2023-12-21 at 4 29 25 AM" src="https://github.com/rustyinfinity/nhentai-downloader/assets/115462641/0c1d2669-0442-4fc7-88e9-51272c1b3be4">
 
-<img width="417" alt="Screenshot 2023-11-11 at 3 03 07 PM" src="https://github.com/rustyinfinity/nhentai-downloader/assets/115462641/9529e29c-e721-4bfb-81d7-ca365eabda00">
 
 
 ## Installation
@@ -54,6 +53,8 @@ chmod +x nhentai.sh
 Just enter your Website URL or  ID and it will download in the  directory specified by you in the config ! (default ./ ) 
 Make Sure to enter url for the websites specified and not ID there !
 
+If you want to bulk Download enter Links to links.txt file and add its path to config file 
+
 For Nhentai.net you have to add cf_clearance and csrftoken to main.config file because of cloudflare :(
 Rest all don't need anything and will download just fine !
 
@@ -64,7 +65,9 @@ Rest all don't need anything and will download just fine !
 
 ✅ This is my second release of this code Fixed all above problems and also added more websites !
 
-Bulk Downloading  and adding omegascans will be my next priority for the next release !
+✅ Added Bulk Downloading  
+ 
+Adding omegascans and Manhawa websites will be my next priority for the next release ! with parallel downloading !
 
 And If got any Ideas or Issues feel free to Pull a request !
 I have not done alot of testing so there will be issues which I don't know pls report them if you find any  Thanks !
