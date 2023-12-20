@@ -3,7 +3,7 @@ Its a bash script to download comic/hentai manga from supported websites and con
 No bullshit or bloat just a simple bash script !
 
 # Supported Websites !
-Nhentai.to , Nhentai.net , Hentaifox.com ,  E-hentai.org , 3hentai.net , Pururin.to ,  Asmhentai.com , Hentai2read.com
+Nhentai.net , Nhentai.to , Hentaifox.com ,  E-hentai.org , 3hentai.net , Pururin.to ,  Asmhentai.com , Hentai2read.com
 
 #
 
