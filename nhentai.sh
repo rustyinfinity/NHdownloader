@@ -2,7 +2,6 @@
 
 ############### PREQUISTE ###############
 CONFIG_PATH="./main.config"
-LINKS_PATH="./links.txt"
 source $CONFIG_PATH
 
 if [ -z $DOWNLOAD_DIR ]
