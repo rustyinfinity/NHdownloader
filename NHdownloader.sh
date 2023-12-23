@@ -43,25 +43,25 @@ echo -e "(1) Download Single File \n(2) Download in Bulk ( Make Sure you have ${
 echo -en "\n-> "
 read download_choice
 
-if [ $download_choice == 1 ]
-then
-   clear
-   links=()
-   mkdir -p "./.temp" && rm -rf ./.temp/*
-   echo "Enter ID or URL"
-   echo -en "\n-> "
-   read input
-   id=$(echo "$input" | grep -Eo '[0-9]*')
-   $(echo $site_name) && worker
-elif [ $download_choice == 2 ]
-then
-   clear
-   bulk_download
-else
-   clear
-   echo "ERROR: Please Choose a Valid Option!"
-   exit
-fi
+case "$download_choice" in 
+   "1")
+      clear
+      links=()
+      mkdir -p "./.temp" && rm -rf ./.temp/*
+      echo "Enter ID or URL"
+      echo -en "\n-> "
+      read input
+      id=$(echo "$input" | grep -Eo '[0-9]*')
+      $(echo $site_name) && worker
+      ;;
+   "2")
+      clear && bulk_download
+      ;;
+   *) 
+      clear && echo "ERROR: Please Choose a Valid Option!" && exit
+      ;;
+esac
+
 }
 
 bulk_download(){
@@ -83,9 +83,6 @@ do
    $(echo $site_name) && worker
 done
 }
-
-#-O "./.temp/${i}.${ext}"
-
 
 convert_cleanup(){
 TITLE=$(echo "$html" | grep -o '<title>.*</title>' | sed 's/<title>//g' | sed 's/<\/title>//g' | sed 's/\///g')
@@ -141,10 +138,11 @@ echo -n "#"
 done
 echo " "
 }
+
 Nhentai.to(){
 url="https://nhentai.to/g/$id"
 header_3="referer: https://nhentai.to/"
-html=$(curl -s "$url" -H "${header_1}" -H "${header_2}" -H "${header_3}"  )
+html=$(curl -s "$url" -H "${header_1}" -H "${header_2}" -H "${header_3}")
 total_pages=$(echo "$html" | grep -Eo '<span class="name">[0-9]*</span>' | grep -Eo '[0-9]*')
 pages_error
 for (( i=1 ; i<="$total_pages" ; i++ ));
@@ -303,7 +301,7 @@ read website
 }
 
 ############### EXECUTION ###############
-logo && choose_website
+clear && logo && choose_website
 
 case "$website" in
     "1")
