@@ -48,7 +48,7 @@ or Build it Yourself from https://gitlab.com/gnuwget/wget2
 # Secondly clone repo and make it an executable !
 
 ```bash
-git clone https://github.com/rustyinfinity/NHdownloader.git
+git clone https://github.com/rustyinfinity/NHdownloader.git && cd ./NHdownloader
 ```
 ```bash
 chmod +x NHdownloader.sh
