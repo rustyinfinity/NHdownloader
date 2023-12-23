@@ -14,6 +14,12 @@ then
 touch "./links.txt"
 fi
 
+if [[ -z $FILENAMING ]];
+then
+FILENAMING="{id} TITLE"
+fi
+
+
 ############### HEADERS ###############
 
 header_1="accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7,image/jxl,image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
@@ -53,7 +59,7 @@ then
    bulk_download
 else
    clear
-   echo "Please Choose a Valid Option!"
+   echo "ERROR: Please Choose a Valid Option!"
    exit
 fi
 }
@@ -63,7 +69,7 @@ totalLinks=$(cat ${LINKS_PATH} | sed '/^[[:space:]]*$/d' | wc -l)
 if [ $totalLinks == 0 ]
 then
 clear
-echo "No Links in ${LINKS_PATH} exiting ..."
+echo "ERROR: No Links in ${LINKS_PATH} exiting ..."
 exit
 fi
 echo "Total Links Found: $totalLinks"
@@ -82,7 +88,9 @@ done
 
 
 convert_cleanup(){
-filename=$(echo "$(echo "$html" | grep -o '<title>.*</title>' | sed 's/<title>//g' | sed 's/<\/title>//g')_${id}_${site_name}.cbz" | sed 's/\///g')
+TITLE=$(echo "$html" | grep -o '<title>.*</title>' | sed 's/<title>//g' | sed 's/<\/title>//g' | sed 's/\///g')
+FILENAMING=$(echo $FILENAMING  | sed "s/id/${id}/g" | sed "s/TITLE/${TITLE}/g" )
+filename="$(echo ${FILENAMING}).cbz"
 zip  "${DOWNLOAD_DIR}/${filename}"  ./.temp/* && rm -rf ./.temp
 }
 
@@ -150,7 +158,6 @@ done
 echo " "
 }
 
-
 hentaifox(){
    url="https://hentaifox.com/gallery/$id/"
    header_3="referer: https://hentaifox.com/"
@@ -193,11 +200,8 @@ e-hentai(){
    )
 
    echo -n  "#"
-
    done
    echo " "
-
-
 }
 
 3Hentai(){
@@ -214,7 +218,6 @@ e-hentai(){
    echo -n "#"
    done
    echo " "
-
 }
 
 Pururin(){
@@ -274,6 +277,7 @@ echo "Downloaded !"
 
 }
 
+############### WORKER ###############
 worker(){
 default_downloader && convert_cleanup && summary
 }
@@ -301,46 +305,42 @@ read website
 ############### EXECUTION ###############
 logo && choose_website
 
-if [ $website == 1 ]
-then
-site_name="Nhentai.net"
-bulk_download_check
-#echo "${links[@]}"
-
-elif [ $website == 2 ]
-then
-site_name="hentaifox"
-bulk_download_check
-elif [ $website == 3 ]
-then
-site_name="e-hentai"
-bulk_download_check
-#echo "${links[@]}"
-
-elif [ $website == 4 ]
-then
-site_name="3Hentai"
-bulk_download_check
-elif [ $website == 5 ]
-then
-site_name="Pururin"
-bulk_download_check
-elif [ $website == 6 ]
-then
-site_name="Asmhentai"
-bulk_download_check
-elif [ $website == 7 ] 
-then
-site_name="Hentai2read"
-echo "I will fix it later :( [ Rest are Working! ]"
-#bulk_download_check && convert_cleanup && summary
-#Custom Download config !
-elif [ $website == 8 ] 
-then
-site_name="Nhentai.to"
-bulk_download_check
-else
-clear
-echo "Please choose a valid option ! "
-exit
-fi
+case "$website" in
+    "1")
+         site_name="Nhentai.net"
+         bulk_download_check
+        ;;
+    "2")
+         site_name="hentaifox"
+         bulk_download_check
+        ;;
+    "3")
+         site_name="e-hentai"
+         bulk_download_check
+        ;;
+    "4")
+         site_name="3Hentai"
+         bulk_download_check
+         ;;
+   "5")
+         site_name="Pururin"
+         bulk_download_check
+         ;;
+   "6")
+         site_name="Asmhentai"
+         bulk_download_check
+         ;;
+   "7")
+         site_name="Hentai2read"
+         echo "I will fix it later :( [ Rest are Working! ]"
+         ;;
+   "8")
+         site_name="Nhentai.to"
+         bulk_download_check
+         ;;
+    *)
+         clear
+         echo "ERROR: Please choose a valid option ! "
+         exit
+        ;;
+esac
