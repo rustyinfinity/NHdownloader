@@ -4,17 +4,17 @@
 CONFIG_PATH="./main.config"
 source $CONFIG_PATH
 
-if [ -z $DOWNLOAD_DIR ]
+if [[ -z "$DOWNLOAD_DIR" ]];
 then
 DOWNLOAD_DIR="."
 fi
 
-if [ -z $LINKS_PATH ]
+if [[ -z "$LINKS_PATH" ]];
 then
 touch "./links.txt"
 fi
 
-if [[ -z $FILENAMING ]];
+if [[ -z "$FILENAMING" ]];
 then
 FILENAMING="{id} TITLE"
 fi
@@ -98,7 +98,7 @@ echo "Hentai ID :- $id"
 }
 
 pages_error(){
-if [ -z ${total_pages} ]
+if [[ -z "$total_pages" ]]
 then
 clear
 echo "ERROR: TOTAL PAGES NULL! "
@@ -106,7 +106,7 @@ exit
 fi
 }
 images_error(){
-if [ -z ${image_link} ]
+if [[ -z "$image_link" ]];
 then
 clear
 echo "ERROR: IMAGE LINK NULL! "
