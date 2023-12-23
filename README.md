@@ -1,4 +1,4 @@
-# NHDownloader Bash
+# NHdownloader Bash
 Its a bash script to download comic/hentai manga from supported websites and converts it into cbz format.
 No bullshit or bloat just a simple bash script !
 
@@ -20,7 +20,13 @@ Nhentai.net , Nhentai.to , Hentaifox.com ,  E-hentai.org , 3hentai.net , Pururin
 
 
 ## Installation
-First Download wget2 from your distro repo ! I added it because of its parallel downloading feature which makes downloading much faster than traditional wget and its also actively maintained ! 
+
+Make Sure you have these installed
+```bash
+zip grep curl wget2
+```
+
+Download wget2 from your distro repo ! I added it because of its parallel downloading feature which makes downloading much faster than traditional wget and its also actively maintained ! 
 
 For Arch
 Download from AUR "https://aur.archlinux.org/packages/wget2"
