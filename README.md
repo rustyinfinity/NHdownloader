@@ -14,8 +14,8 @@ Nhentai.net , Nhentai.to , Hentaifox.com ,  E-hentai.org , 3hentai.net , Pururin
 
 
 
-# Output
-<img width="1435" alt="Screenshot 2023-12-21 at 4 29 25 AM" src="https://github.com/rustyinfinity/nhentai-downloader/assets/115462641/0c1d2669-0442-4fc7-88e9-51272c1b3be4">
+# Default Output
+<img width="735" alt="Screenshot 2023-12-23 at 1 17 18 PM" src="https://github.com/rustyinfinity/nhentai-downloader/assets/115462641/25dfb5d2-dc4a-4cde-9f76-6188bd86eb37">
 
 
 
