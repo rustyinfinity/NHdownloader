@@ -18,12 +18,18 @@ if [[ -z "$FILENAMING" ]];
 then
 FILENAMING="{id} TITLE"
 fi
+if [[ -z "$USER_AGENT" ]];
+then
+echo "Enter User Agent in config before continuing !"
+echo "Get it from here https://my-user-agent.com/"
+exit
+fi
 
 
 ############### HEADERS ###############
 
 header_1="accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/jxl,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7,image/jxl,image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
-header_2="user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+header_2="user-agent: $USER_AGENT"
 header_3="referer: https://nhentai.net/"
 header_4="cookie: cf_clearance=${cf_clearance}; csrftoken=${csrftoken}"
 header_5="authority: nhentai.net"
@@ -122,7 +128,7 @@ echo "ERROR: EMPTY cf_clearance & csrftoken in config File please add or try ano
 exit
 fi
 url="https://nhentai.net/g/$id/"
-html=$(curl -s "$url" -H "${header_5}" -H "${header_1}" -H "${header_4}" -H "${header_3}" -H "${header_2}" )
+html=$(curl -s "$url" -H "${header_5}" -H "${header_4}" -H "${header_2}" -H "${header_1}" -H "referer: $url" )
 total_pages=$(echo "$html" | grep -Eo '<span class="name">[0-9]*</span>' | grep -Eo '[0-9]*')
 sub_link="${url}${i}/"
 image_link=$(curl -s "${sub_link}" -H "${header_5}" -H "${header_1}" -H "${header_4}" -H "${header_3}" -H "${header_2}" | grep -Eo 'https://[a-zA-Z0-9?%-_]*/galleries/[0-9]*/[0-9]*.[a-z]*' )
