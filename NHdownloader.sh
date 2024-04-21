@@ -130,7 +130,7 @@ fi
 url="https://nhentai.net/g/$id/"
 html=$(curl -s "$url" -H "${header_5}" -H "${header_4}" -H "${header_2}" -H "${header_1}" -H "referer: $url" )
 total_pages=$(echo "$html" | grep -Eo '<span class="name">[0-9]*</span>' | grep -Eo '[0-9]*')
-sub_link="${url}${i}/"
+sub_link="${url}"
 image_link=$(curl -s "${sub_link}" -H "${header_5}" -H "${header_1}" -H "${header_4}" -H "${header_3}" -H "${header_2}" | grep -Eo 'https://[a-zA-Z0-9?%-_]*/galleries/[0-9]*/[0-9]*.[a-z]*' )
 pages_error
 images_error
